@@ -26,7 +26,7 @@ module "sandbox" {
   account_customizations_name = "sandbox"
 }
 
-module "sandbox" {
+module "awsAccount003" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
