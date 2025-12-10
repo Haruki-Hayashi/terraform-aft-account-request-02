@@ -222,4 +222,87 @@ module "awsAccount2025-005" {
   account_customizations_name = "sandbox"
 }
 
+module "awsAccount2025-006" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-students-2025-006@ml.jp.panasonic.com"
+    AccountName               = "aws-students-2025-006"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "aws-selflearning-env@ml.jp.panasonic.com"
+    SSOUserFirstName          = "AWS Control Tower"
+    SSOUserLastName           = "Admin"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "HashiCorp Learn"
+    change_reason       = "Learn AWS Control Tower Account Factory for Terraform"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
+
+module "awsAccount2025-007" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-students-2025-007@ml.jp.panasonic.com"
+    AccountName               = "aws-students-2025-007"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "aws-selflearning-env@ml.jp.panasonic.com"
+    SSOUserFirstName          = "AWS Control Tower"
+    SSOUserLastName           = "Admin"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "HashiCorp Learn"
+    change_reason       = "Learn AWS Control Tower Account Factory for Terraform"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
+
+module "awsAccount2025-008" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-students-2025-008@ml.jp.panasonic.com"
+    AccountName               = "aws-students-2025-008"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "aws-selflearning-env@ml.jp.panasonic.com"
+    SSOUserFirstName          = "AWS Control Tower"
+    SSOUserLastName           = "Admin"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "HashiCorp Learn"
+    change_reason       = "Learn AWS Control Tower Account Factory for Terraform"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
 
