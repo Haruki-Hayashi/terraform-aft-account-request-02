@@ -65,3 +65,39 @@ module "sandbox" {
 
   account_customizations_name = "sandbox"
 }
+
+# ============================================================================
+# 2026年度 検証用アカウント（2026/10/28 追加）
+#   目的: Terraform 1.9.8 化後に、アカウント作成フローが最後まで通るかの検証。
+#         あわせて 03(Budget 実績50/70/100) / 04(S3削除) のカスタマイズも確認する。
+#   ログインID: アカウントの ML（aws-learning-2026-test@...）。SSOUserは昨年度踏襲で
+#               共有管理者ユーザー（aws-selflearning-env@...）。
+#   検証後はクローズ（unenroll → Organizations CloseAccount）して整理する想定。
+# ============================================================================
+module "awsAccount2026-verification" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aws-learning-2026-test@ml.jp.panasonic.com"
+    AccountName               = "aws-learning-2026-test"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "aws-selflearning-env@ml.jp.panasonic.com"
+    SSOUserFirstName          = "AWS Control Tower"
+    SSOUserLastName           = "Admin"
+  }
+
+  account_tags = {
+    "Project" = "aws-self-learning-2026-verification"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "AWS self-learning env team"
+    change_reason       = "2026 pipeline verification"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "sandbox"
+}
